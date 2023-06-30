@@ -1,5 +1,7 @@
+import { ExpensesService } from './../services/expenses.service';
 import { Expense } from './../model/expense';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-expenses',
@@ -8,12 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExpensesComponent implements OnInit {
 
-  expenses: Expense[] = [
-    {_id: '1', description: 'Casas Bahia', category: 'Eletrodomésticos'}
-  ];
+  expenses$: Observable<Expense[]>;
   displayedColumns = ['description', 'category'];
 
-  constructor() {
+  constructor(private expensesService: ExpensesService) {
+    this.expenses$ = this.expensesService.list();
    }
 
   ngOnInit(): void {
