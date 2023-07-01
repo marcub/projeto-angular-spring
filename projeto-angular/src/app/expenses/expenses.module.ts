@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { AppMaterialModule } from '../shared/app-material/app-material.module';
+import { SharedModule } from '../shared/shared.module';
 import { ExpensesRoutingModule } from './expenses-routing.module';
 import { ExpensesComponent } from './expenses/expenses.component';
-import { AppMaterialModule } from '../shared/app-material/app-material.module';
 
 
 
@@ -15,7 +16,8 @@ import { AppMaterialModule } from '../shared/app-material/app-material.module';
   imports: [
     CommonModule,
     ExpensesRoutingModule,
-    AppMaterialModule
+    AppMaterialModule,
+    SharedModule
   ]
 })
 export class ExpensesModule { }
