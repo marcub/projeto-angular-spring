@@ -11,7 +11,7 @@ import com.marcus.projetospring.model.Expense;
 import com.marcus.projetospring.repository.ExpenseRepository;
 
 @RestController
-@RequestMapping("/expenses")
+@RequestMapping("/api/expenses")
 public class ExpenseController {
 
     @Autowired
